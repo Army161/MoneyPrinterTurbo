@@ -1,12 +1,8 @@
 {
   "name": "MoneyPrinterTurbo",
   "install": "bash .cursor/install.sh",
+  "start": "bash .cursor/start.sh",
   "terminals": [
-    {
-      "name": "Redis",
-      "command": "redis-server --bind 127.0.0.1 --port 6379 --save \"\" --appendonly no",
-      "description": "Local Redis for the optional distributed task queue. The app falls back to an in-memory queue if this is not running."
-    },
     {
       "name": "API server",
       "command": "export PATH=\"$HOME/.local/bin:$PATH\"; export PYTHONPATH=\"$PWD\"; uv run --no-sync python main.py",
