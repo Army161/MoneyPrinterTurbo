@@ -1,0 +1,21 @@
+{
+  "name": "MoneyPrinterTurbo",
+  "install": "bash .cursor/install.sh",
+  "start": "bash .cursor/start.sh",
+  "terminals": [
+    {
+      "name": "API server",
+      "command": "export PATH=\"$HOME/.local/bin:$PATH\"; export PYTHONPATH=\"$PWD\"; uv run --no-sync python main.py",
+      "description": "FastAPI backend on http://127.0.0.1:8080 (docs at /docs)."
+    },
+    {
+      "name": "WebUI",
+      "command": "export PATH=\"$HOME/.local/bin:$PATH\"; MPT_WEBUI_HOST=0.0.0.0 MPT_WEBUI_PORT=8501 sh webui.sh",
+      "description": "Streamlit WebUI on http://127.0.0.1:8501."
+    }
+  ],
+  "ports": [
+    { "name": "API server", "port": 8080 },
+    { "name": "WebUI", "port": 8501 }
+  ]
+}
